@@ -397,6 +397,9 @@ public class MainLigaImaginaria2022 {
 		 * que pertenecen a cada equipo.
 		 * Anteriormente ya se habia asignado cada jugador al vector de jugadores
 		 * de cada equipo. 
+		 * dfasfadsfadsf
+		 * asfasfsafa
+		 * fasfasf
 		 */
 		equiposPrimeraDivision[0] = new Equipo ("FC1", " Estadio1 ", 1900, jugadoresEquipo1, 19, 6 , 3);
 		equiposPrimeraDivision[1] = new Equipo ("FC2", " Estadio2", 1905, jugadoresEquipo2, 18, 6, 4);
