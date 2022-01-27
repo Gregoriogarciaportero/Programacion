@@ -44,8 +44,8 @@ public class Equipo {
 	}
 		
 	// Metodos get & set, Fundacion
-	public int getanoFundacion( int fundacion) {
-		return fundacion;
+	public int getanoFundacion( ) {
+		return anofundacion;
 	}
 	public void setanoFundacion (int fundacion) {
 		this.anofundacion = anofundacion ;	
@@ -60,7 +60,7 @@ public class Equipo {
 	}
 		
 	// Metodos get & set Puntos
-	public int getPuntos ( int puntos) {
+	public int getPuntos () {
 		return puntos;
 	}
 	public void setPuntos (int puntos) {
@@ -68,7 +68,7 @@ public class Equipo {
 	}	
 		
 	// Metodos get & set, partidosGanados
-	public int getPartidosGanados ( int partidosGanados) {
+	public int getPartidosGanados ( ) {
 		return partidosGanados;
 	}
 	public void setPartidosGanados (int partidosGanados) {
@@ -76,7 +76,7 @@ public class Equipo {
 	}
 		
 	// Metodos get & set, partidosPerdidos
-	public int getPartidosPerdidos ( int partidosPerdidos) {
+	public int getPartidosPerdidos ( ) {
 		return partidosPerdidos;
 	}
 	public void setPartidosPerdidos (int partidosPerdidos) {
@@ -84,7 +84,7 @@ public class Equipo {
 	}
 		
 	// Metodos get & set, partidosEmpatados
-	public int getPartidosEmpatados ( int partidosEmpatados) {
+	public int getPartidosEmpatados ( ) {
 		return partidosEmpatados;
 	}
 	public void setPartidosEmpatados (int partidosEmpatados) {

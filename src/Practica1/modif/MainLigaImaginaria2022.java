@@ -17,103 +17,7 @@ public class MainLigaImaginaria2022 {
 	 * equipos que componen el campeonato de futbol.
 	 * Se envia al método el array llamada "equiposPrimeraDivision" de la clase Equipo.
 	 */
-	public static void ordenarEquiposPorPuntos ( Equipo [] equiposPrimeraDivision) {
-		/* Primer bucle para recorrer el array que contiene los equipos.
-		 * En este buclelimito el recorrido a .length-2 ya que empiezo en 
-		 * a comparar desde la segunda celda del array en el segundo bucle.
-		 */
-		for (int i=0; i<=equiposPrimeraDivision.length-2; i++) { 
-			// Declaro una variable para fijar el primer objeto del array
-			int menor=i;
-			/* Segundo bucle para recorrer el array a partir del segundo
-			 * objeto (i+1) y lo voy comparando. Si se cumple la condicion del (if)
-			 * que es la comparación de puntos que tiene el equipo,
-			 * entonces actualizo el valor de menor al encontrado (menor=j) 
-			 */
-			for (int j=i+1; j<=equiposPrimeraDivision.length-1; j++) {
-				if (equiposPrimeraDivision[j].puntos > equiposPrimeraDivision[menor].puntos) {
-					menor=j;
-				}
-			}
-			/* 
-			 * Creo una variable de la clase equipo para hacer el cambio de 
-			 * posicion en el vector donde se almacenan los equipos de la liga.
-			 * Y a continuacíon hago el cambio, ya que no puede realizarse
-			 * directamente.
-			 */
-			Equipo aux = equiposPrimeraDivision[i];
-			equiposPrimeraDivision[i] = equiposPrimeraDivision[menor];
-			equiposPrimeraDivision[menor]= aux;
-		}
-	}
 	
-	/*
-	 * Pre:...
-	 * Post: Este método es similar al explicado anteriormente. Se utiliza para
-	 * ordenar los jugadores que componen la Liga, pero por el atributo "goles".
-	 * Se envia al método el array llamado "jugadoresEquiposLiga" de la clase Jugador.
-	 * El desarrollo (ordenar)es similar al anterior metodo, pero en este caso se
-	 * ordena la tabla segun el atributo "goles" del jugador.
-	 */
-	public static void ordenarJugadoresPorGoles ( Jugador [] jugadoresEquiposLiga) {
-		for (int i=0; i<=jugadoresEquiposLiga.length-2; i++) {
-			int menor=i;
-			for (int j=i+1; j<=jugadoresEquiposLiga.length-1; j++) {
-				if (jugadoresEquiposLiga[j].goles > jugadoresEquiposLiga[menor].goles) {
-					menor=j;
-				}
-			}
-			Jugador aux = jugadoresEquiposLiga[i];
-			jugadoresEquiposLiga[i] = jugadoresEquiposLiga[menor];
-			jugadoresEquiposLiga[menor]= aux;
-		}
-	}
-	
-	/*
-	 * Pre:...
-	 * Post: Este método es similar al explicado al del primer lugar. Se utiliza para
-	 * ordenar los jugadores que componen la Liga pero por el atributo "tarjetasRojas".
-	 * Se envia al método el array llamado "jugadoresEquiposLiga" de la clase Jugador.
-	 * El desarrollo (ordenar)es similar al anterior metodo, pero en este caso se
-	 * ordena la tabla segun el atributo "tarjetasRojas" del jugador.
-	 */
-	public static void ordenarJugadoresPorTarjetasRojas ( Jugador [] jugadoresEquiposLiga) {
-		for (int i=0; i<=jugadoresEquiposLiga.length-2; i++) {
-			int menor=i;
-			for (int j=i+1; j<=jugadoresEquiposLiga.length-1; j++) {
-				if (jugadoresEquiposLiga[j].tarjetasRojas > jugadoresEquiposLiga[menor].tarjetasRojas) {
-					menor=j;
-				}
-			}
-			Jugador aux = jugadoresEquiposLiga[i];
-			jugadoresEquiposLiga[i] = jugadoresEquiposLiga[menor];
-			jugadoresEquiposLiga[menor]= aux;
-			
-		}
-	}
-	
-	/*
-	 * Pre:...
-	 * Post: Este método es similar al explicado al del primer lugar. Se utiliza para
-	 * ordenar los equipos que componen la Liga pero por el atributo "goles".
-	 * Se envia al método el array llamado "equiposPrimeraDivision" de la clase Equipo.
-	 * El desarrollo (ordenar)es similar al anterior metodo, pero en este caso se
-	 * ordena la tabla segun el atributo ""goles" del equipo.
-	 */
-	public static void ordenarEquiposPorGoles ( Equipo [] equiposPrimeraDivision) {
-		for (int i=0; i<=equiposPrimeraDivision.length-2; i++) {
-			int menor=i;
-			for (int j=i+1; j<=equiposPrimeraDivision.length-1; j++) {
-				if (equiposPrimeraDivision[j].golesAFavor > equiposPrimeraDivision[menor].golesAFavor) {
-					menor=j;
-				}
-			}
-			Equipo aux = equiposPrimeraDivision[i];
-			equiposPrimeraDivision[i] = equiposPrimeraDivision[menor];
-			equiposPrimeraDivision[menor]= aux;
-			
-		}
-	}
 	
 	/*
 	 * METODO MAIN DEL PROGRAMA
@@ -413,7 +317,10 @@ public class MainLigaImaginaria2022 {
 		equiposPrimeraDivision[12] = new Equipo ("FC13", " Estadio13", 1960, jugadoresEquipo13, 7, 5, 16);
 		equiposPrimeraDivision[13] = new Equipo ("FC14", " Estadio14", 1970, jugadoresEquipo14, 6, 5, 17);
 		equiposPrimeraDivision[14] = new Equipo ("FC15", " Estadio15", 1975, jugadoresEquipo15, 22, 5, 1);
-	
+		
+		Liga ligaProfesional [] = new Liga [1];
+		ligaProfesional [0] = new Liga ("ligaBBVA", equiposPrimeraDivision);
+		 
 		/*
 		 * Se crea el menu que solicita el enunciado del ejercicio. Para que el 
 		 * usuario elija una opción propuesta. 
@@ -448,11 +355,7 @@ public class MainLigaImaginaria2022 {
 		 */
 		if (opcion == 1 ) {
 			// Llamada al metodo ordenar por "puntos" los objetos de la clase Equipo.
-			ordenarEquiposPorPuntos (equiposPrimeraDivision);
-			//Bucle para imprimir los todos equipos ordenados. 
-			for (int i = 0; i<equiposPrimeraDivision.length; i++) { 
-				System.out.println(equiposPrimeraDivision[i].toString());
-			} 
+			ligaProfesional[0].ordenarEquiposPorPuntos ();
 			
 		/*
 		 * La opción 2 del menu, imprime por pantalla los 5 jugadores con más goles.
@@ -461,26 +364,17 @@ public class MainLigaImaginaria2022 {
 		 */		
 		}  else if (opcion == 2 ) {
 			// Llamada al metodo ordenar por atributo "goles" los objetos de la clase Jugador.
-			ordenarJugadoresPorGoles (jugadoresEquiposLiga);
-			//Bucle para imprimir los 5 primeros jugadores ordenados. 
-			for (int i = 0; i<5; i++) { 
-				System.out.println(jugadoresEquiposLiga[i].toString());
-			}	
+			ligaProfesional[0].ordenarJugadoresPorGoles ();
 			
 		/*
 		 * La opción 3 del menu, imprime por pantalla los 5 jugadores con más expulsiones
 		 * o tarjetas rojas. Muestra el nombre del jugador y el numero
 		 * de expulsiones de mayor a menor.
 		 */
-		} else if ( opcion == 3 ) {
+		} else if (opcion == 3 ) {
 			// Llamada al metodo ordenar por atributo "tarjetasRojas" los objetos de la clase Jugador
-			ordenarJugadoresPorTarjetasRojas (jugadoresEquiposLiga);
-			//Bucle para imprimir los 5 primeros jugadores ordenados. 
-			for (int i = 0; i<5; i++) { 
-				System.out.println( " Nombre = " + jugadoresEquiposLiga[i].nombre + 
-						" ------" + " Expulsiones = "  + jugadoresEquiposLiga[i].tarjetasRojas);	
-			} 
-			
+			ligaProfesional[0].ordenarJugadoresPorTarjetasRojas ();	
+		
 		/*
 		 * La opción 4 del menu, imprime por pantalla el nombre de los 3 equipos
 		 * más goleadores. Muestra el nombre del equipo y sus goles,
@@ -488,11 +382,7 @@ public class MainLigaImaginaria2022 {
 		 */	
 		} else if (opcion == 4 ) {
 			// Llamada al metodo ordenar por atributo "golesAFavor" los objetos de la clase Equipo
-			ordenarEquiposPorGoles (equiposPrimeraDivision);
-			//Bucle para imprimir los 3primeros equipos ordenados. 
-			for (int i = 0; i<3; i++) { 
-				System.out.println( " Nombre = " + equiposPrimeraDivision[i].nombre + "------" + " Goles a favor = "  + equiposPrimeraDivision[i].golesAFavor);
-			}
+			ligaProfesional[0].ordenarEquiposPorGoles ();
 		}
 		enter.close ();
 	}

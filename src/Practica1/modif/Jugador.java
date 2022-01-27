@@ -36,7 +36,7 @@ public class Jugador {
 	}
 	
 	// Metodos get & set Goles
-	public int getGoles( int goles) {
+	public int getGoles() {
 		return goles;
 	}
 	public void setGoles (int goles) {
@@ -44,7 +44,7 @@ public class Jugador {
 	}
 
 	// Metodos get & set TarjetasRojas
-	public int getTarjetasRojas ( int tarjetasRojas) {
+	public int getTarjetasRojas ( ) {
 		return tarjetasRojas;
 		}
 	public void setTarjetasRojas (int tarjetasRojas) {
@@ -52,7 +52,7 @@ public class Jugador {
 	}
 	
 	// Metodos get & set TarjetasAmarillas
-	public int getTarjetasAmartillas ( int tarjetasAmarillas) {
+	public int getTarjetasAmartillas ( ) {
 		return tarjetasAmarillas;
 	}
 	public void setTarjetasAmarillas (int tarjetasAmarillas) {
